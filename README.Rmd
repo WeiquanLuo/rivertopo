@@ -54,4 +54,7 @@ devtools::install_github("WeiquanLuo/rivertopo")
 
 ## Example
 
-Not yet avaliable
+<center>
+![Topology (green color) of Selected USGS Water Sampling Site along Topology (blue color) of River Topology within the Boundary of Hydrological Unit 07 and 10](inst/extdata/riverNet.png){width=100%}
+</center>
+
