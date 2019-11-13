@@ -4,6 +4,7 @@
 #' @importFrom dplyr arrange
 #' @importFrom dplyr distinct
 #' @importFrom dplyr mutate
+#' @importFrom dplyr desc
 
 # reorder group by seg in closet order
 reorderbyseg <- function(site_sf, arc_sf.set){

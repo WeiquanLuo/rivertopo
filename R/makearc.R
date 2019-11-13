@@ -14,7 +14,6 @@
 #' @importFrom dplyr mutate_all
 #' @importFrom dplyr filter
 
-
 # test for makearc
 # riverVert <- riverVert
 # rivers_net <- rivers_net_fixed

@@ -5,12 +5,9 @@
 #' @importFrom purrr pmap
 #' @importFrom purrr map
 #' @importFrom sf st_sf
-#' @importFrom magrittr %>%
-#' @importFrom magrittr %>%
-#' @importFrom magrittr %>%
-#' @importFrom magrittr %>%
-#' @importFrom magrittr %>%
-
+#' @importFrom sf st_linestring
+#' @importFrom utils head
+#' @importFrom utils tail
 
 # convert rivers_net to site_sf
 rivernetwork2riverVert <- function(rivers_net, crs = 2163){
@@ -44,6 +41,7 @@ rivernetwork2riverVert <- function(rivers_net, crs = 2163){
     rbind(riverVert %>% filter(seg==rivers_net$mouth$mouth.seg,
                                vert!=rivers_net$mouth$mouth.vert)) %>%
     rbind(riverVert %>% filter(seg!=rivers_net$mouth$mouth.seg))
+
   vector2matrix <- function(X,Y){
     matrix(c(X, Y), ncol=2, byrow=TRUE)
   }
