@@ -1,0 +1,21 @@
+#' @importFrom magrittr %>%
+#' @importFrom raster crs
+
+
+# TEST: riverVert <- riverVert
+# convert arc.set to sf
+arc2sf <- function(arc.set, riverVert){
+
+  # arc.set to vector.set
+  source("R/arc2vector.R")
+  vector.set <- arc.set %>%
+    arc2vector(riverVert = riverVert)
+
+  # vector.set to sf.set
+  source("R/vector2sf.R")
+
+  sf.set <- vector.set %>%
+    vector2sf(crs = raster::crs(riverVert))
+
+  return(sf.set)
+}
