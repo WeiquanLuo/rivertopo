@@ -1,7 +1,6 @@
 #' @importFrom magrittr %>%
 #' @importFrom dplyr filter
 #' @importFrom utils txtProgressBar setTxtProgressBar
-# importFrom rivertopo reorderbyseg linkwithinseg linkbetweenseg
 #' @export
 
 # site to segvert.set
