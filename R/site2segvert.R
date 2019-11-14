@@ -8,14 +8,12 @@ site2segvert <- function(site_sf, arc_sf.set){
 
   # piping the above functions
   # 1. reorder site grouped by seg in order of
+  site <- reorderbyseg(site_sf= site_sf, arc_sf.set = arc_sf.set)
   # 2. connect to the next downstream site
-  # 3. connect to first site in next downstream seg
-  site <- site_sf %>%
-    reorderbyseg(arc_sf.set = arc_sf.set)
   segvert.set <- site %>%
     linkwithinseg() %>%   # return segvert.set with site to site
     linkbetweenseg(arc_sf.set = arc_sf.set) # return segvert.set with avaliable site to startVert
-  # iterate until no NA
+  # 3. connect to first site in next downstream seg, iterate until no NA
   total <- nrow(segvert.set)-1
   pb <- txtProgressBar(min = 0, max = total, style = 3)
   while (segvert.set %>% filter(connected==FALSE) %>% nrow() > 1){
