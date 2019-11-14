@@ -8,12 +8,12 @@
 arc2sf <- function(arc.set, riverVert){
 
   # arc.set to vector.set
-  source("arc2vector.R")
+  #source("arc2vector.R")
   vector.set <- arc.set %>%
     arc2vector(riverVert = riverVert)
 
   # vector.set to sf.set
-  source("vector2sf.R")
+  #source("vector2sf.R")
 
   sf.set <- vector.set %>%
     vector2sf(crs = raster::crs(riverVert))
