@@ -15,6 +15,7 @@ reorderbyseg <- function(site_sf, arc_sf.set){
     distinct() %>%
     filter(seg0 %in% site_sf$seg)# filter only seg where sites locate
 
+
   # testing
   # df <- site %>% left_join(endvert, by= c("seg"= "seg0")) %>% nest(-seg) %>% select(data); df<-df[2, ][[1]][[1]]; df
   reordervert <- function(df){
