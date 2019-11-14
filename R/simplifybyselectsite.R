@@ -3,7 +3,7 @@
 #' @importFrom raster crs
 # importFrom rivertopo site2segvert segvert2vector vector2sf
 #' @export
-#'
+
 # test for module
 # arc_sf.set <- arc_sf.set
 # site_sf <- site_select_sf
