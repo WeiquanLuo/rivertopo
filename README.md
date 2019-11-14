@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![Travis build
-status](https://travis-ci.org/WeiquanLuo/rivertopo.svg?branch=master)](https://travis-ci.org/WeiquanLuo/rivertopo)
+status](https://travis-ci.com/WeiquanLuo/rivertopo.svg?branch=master)](https://travis-ci.org/WeiquanLuo/rivertopo)
 <!-- badges: end -->
 
 The goal of rivertopo is to simplify a given tree topology (ie. for
