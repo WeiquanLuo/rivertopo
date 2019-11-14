@@ -1,13 +1,10 @@
 #' @importFrom magrittr %>%
-#' @importFrom dplyr left_join
 #' @importFrom tidyr nest
-#' @importFrom dplyr mutate
-#' @importFrom tidyr unnest
-#' @importFrom dplyr select
-#' @importFrom dplyr filter
-#' @importFrom dplyr distinct
+#' @importFrom dplyr select filter mutate distinct left_join
 #' @importFrom rlang flatten
 #' @importFrom stats setNames
+#' @importFrom tidyr unnest
+#' @export
 
 #'
 # link within seg: site to site $ vert to site

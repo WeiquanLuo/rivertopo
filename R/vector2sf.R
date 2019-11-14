@@ -1,10 +1,8 @@
 #' @importFrom magrittr %>%
 #' @importFrom dplyr select
-#' @importFrom purrr pmap
-#' @importFrom purrr map
-#' @importFrom sf st_sf
-#' @importFrom sf st_linestring
-
+#' @importFrom purrr pmap map
+#' @importFrom sf st_sf st_linestring
+#' @export
 
 # vector.set to sf.set
 vector2sf <- function(vector.set, crs){

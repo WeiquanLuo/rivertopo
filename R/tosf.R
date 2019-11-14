@@ -1,8 +1,7 @@
 #' @importFrom magrittr %>%
-#' @importFrom dplyr rename
-#' @importFrom dplyr select
+#' @importFrom dplyr rename select
 #' @importFrom sf st_as_sf
-
+#' @export
 tosf <- function(df,id_cn, Lon_cn, Lat_cn, crs= 4326){
   # cleanup data
   df_locs <- df %>% rename(lon=Lon_cn, lat=Lat_cn, id = id_cn)

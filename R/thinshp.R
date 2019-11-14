@@ -2,7 +2,7 @@
 #' @importFrom maptools thinnedSpatialPoly
 #' @importFrom methods as
 #' @importFrom sf st_as_sf
-#'
+#' @export
 thinshp <- function(shp){
   shp_st <- maptools::thinnedSpatialPoly(
     as(shp, "Spatial"), tolerance = 0.1,

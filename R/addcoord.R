@@ -1,4 +1,5 @@
 #' @importFrom sf st_coordinates
+#' @export
 
 addcoord <- function(site_sf){
   # add COORDS in projected form (UTM)

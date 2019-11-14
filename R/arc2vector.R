@@ -1,8 +1,8 @@
 #' @importFrom magrittr %>%
 #' @importFrom sf st_drop_geometry
-#' @importFrom dplyr select
-#' @importFrom dplyr left_join
+#' @importFrom dplyr select left_join
 #' @importFrom rlang set_names
+#' @export
 
 arc2vector <- function(arc.set, riverVert){
   lookuptable_locs2lonlat <- st_drop_geometry(riverVert)

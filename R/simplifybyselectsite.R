@@ -1,6 +1,8 @@
 #' @importFrom magrittr %>%
 #' @importFrom dplyr filter
 #' @importFrom raster crs
+#' @export
+#'
 # test for module
 # arc_sf.set <- arc_sf.set
 # site_sf <- site_select_sf

@@ -1,5 +1,6 @@
 #' @importFrom magrittr %>%
 #' @importFrom raster crs
+#' @export
 
 
 # TEST: riverVert <- riverVert

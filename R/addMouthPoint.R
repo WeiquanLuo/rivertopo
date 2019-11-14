@@ -1,6 +1,7 @@
 #' @importFrom magrittr %>%
 #' @importFrom rlang set_names
 #' @importFrom dplyr mutate
+#' @export
 
 addMouthPoint <- function(df, long = -90.199402, lat = 38.627003, buff = 1){
   if (buff==1){

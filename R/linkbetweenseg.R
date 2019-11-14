@@ -1,11 +1,7 @@
 #' @importFrom magrittr %>%
 #' @importFrom sf st_drop_geometry
-#' @importFrom dplyr filter
-#' @importFrom dplyr select
-#' @importFrom dplyr as_tibble
-#' @importFrom dplyr rename
-#' @importFrom dplyr left_join
-#' @importFrom dplyr mutate
+#' @importFrom dplyr filter select mutate as_tibble rename left_join
+#' @export
 
 
 # link between seg

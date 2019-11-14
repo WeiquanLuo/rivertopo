@@ -1,13 +1,9 @@
 #' @importFrom magrittr %>%
-#' @importFrom purrr map_dfr
-#' @importFrom dplyr filter
-#' @importFrom dplyr select
-#' @importFrom purrr pmap
-#' @importFrom purrr map
-#' @importFrom sf st_sf
-#' @importFrom sf st_linestring
-#' @importFrom utils head
-#' @importFrom utils tail
+#' @importFrom dplyr filter select
+#' @importFrom purrr pmap map map_dfr
+#' @importFrom sf st_sf st_linestring
+#' @importFrom utils head tail
+#' @export
 
 # convert rivers_net to site_sf
 rivernetwork2riverVert <- function(rivers_net, crs = 2163){

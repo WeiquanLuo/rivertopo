@@ -1,10 +1,6 @@
 #' @importFrom magrittr %>%
-#' @importFrom dplyr filter
-#' @importFrom dplyr select
-#' @importFrom dplyr arrange
-#' @importFrom dplyr distinct
-#' @importFrom dplyr mutate
-#' @importFrom dplyr desc
+#' @importFrom dplyr filter select arrange distinct mutate desc
+#' @export
 
 # reorder group by seg in closet order
 reorderbyseg <- function(site_sf, arc_sf.set){

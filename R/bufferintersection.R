@@ -1,7 +1,6 @@
 #' @importFrom magrittr %>%
-#' @importFrom sf st_transform
-#' @importFrom sf st_buffer
-#' @importFrom sf st_intersection
+#' @importFrom sf st_transform st_buffer st_intersection
+#' @export
 bufferintersection <- function(site_sf, rivers, buffer_dist = 1000){
   rivers_buffer <- rivers %>%
     st_transform(crs = 2163) %>%

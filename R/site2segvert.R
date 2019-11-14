@@ -1,7 +1,7 @@
 #' @importFrom magrittr %>%
 #' @importFrom dplyr filter
-#' @importFrom utils txtProgressBar
-#' @importFrom utils setTxtProgressBar
+#' @importFrom utils txtProgressBar setTxtProgressBar
+#' @export
 # site to segvert.set
 site2segvert <- function(site_sf, arc_sf.set){
 

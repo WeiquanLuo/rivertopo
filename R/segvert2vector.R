@@ -1,8 +1,7 @@
 #' @importFrom magrittr %>%
 #' @importFrom sf st_drop_geometry
-#' @importFrom dplyr select
-#' @importFrom dplyr left_join
-#' @importFrom dplyr rename
+#' @importFrom dplyr select rename left_join
+#' @export
 
 # segvert.set to vector.set
 segvert2vector <- function(segvert.set, site_sf){

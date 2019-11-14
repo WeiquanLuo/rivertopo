@@ -1,18 +1,10 @@
 #' @importFrom magrittr %>%
-#' @importFrom plyr laply
-#' @importFrom dplyr tibble
-#' @importFrom riverdist riverdistance
-#' @importFrom plyr mdply
-#' @importFrom dplyr pull
-#' @importFrom dplyr arrange
+#' @importFrom plyr laply mdply
+#' @importFrom riverdist riverdistance detectroute
 #' @importFrom purrr map2
-#' @importFrom riverdist detectroute
-#' @importFrom plyr mdply
-#' @importFrom dplyr left_join
 #' @importFrom stats na.omit
-#' @importFrom dplyr select
-#' @importFrom dplyr mutate_all
-#' @importFrom dplyr filter
+#' @importFrom dplyr filter select arrange mutate_all left_join pull tibble
+#' @export
 
 # test for makearc
 # riverVert <- riverVert
