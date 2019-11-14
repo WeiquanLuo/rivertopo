@@ -1,5 +1,6 @@
 #' @importFrom magrittr %>%
 #' @importFrom dplyr filter select arrange distinct mutate desc
+#' @importFrom purrr map
 #' @export
 
 # reorder group by seg in closet order
@@ -12,7 +13,7 @@ reorderbyseg <- function(site_sf, arc_sf.set){
     select(seg0, vert0) %>% # select endvert of seg or the from (downstream of the seg)
     arrange(seg0) %>%
     distinct() %>%
-    filter(seg0 %in% site_sf$seg); endvert # filter only seg where sites locate
+    filter(seg0 %in% site_sf$seg)# filter only seg where sites locate
 
   # testing
   # df <- site %>% left_join(endvert, by= c("seg"= "seg0")) %>% nest(-seg) %>% select(data); df<-df[2, ][[1]][[1]]; df
@@ -32,7 +33,7 @@ reorderbyseg <- function(site_sf, arc_sf.set){
     as_tibble() %>%
     left_join(endvert, by= c("seg"= "seg0")) %>%
     nest(-seg) %>%
-    mutate(data = purrr::map(data, reordervert)) %>% # group by seg, arrange from farthest to closest to the endvert of the seg
+    mutate(data = map(data, reordervert)) %>% # group by seg, arrange from farthest to closest to the endvert of the seg
     unnest() %>%
     select(seg, vert) %>%
     distinct()
