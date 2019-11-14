@@ -5,9 +5,9 @@
 
 # reorder group by seg in closet order
 reorderbyseg <- function(site_sf, arc_sf.set){
-  s <- site_sf$seg
-  print(s)
-  cat(s)
+  cat("\n check point 1")
+  cat(site_sf)
+  cat("\n")
   # find the *endvert of each seg* where sites locate
   endvert <- arc_sf.set %>%
     st_drop_geometry() %>%
@@ -16,8 +16,11 @@ reorderbyseg <- function(site_sf, arc_sf.set){
     select(seg0, vert0) %>% # select endvert of seg or the from (downstream of the seg)
     arrange(seg0) %>%
     distinct() %>%
-    filter(seg0 %in% s)# filter only seg where sites locate
+    filter(seg0 %in% site_sf$seg)# filter only seg where sites locate
 
+  cat("\n check point 2")
+  cat(site_sf)
+  cat("\n")
 
   # testing
   # df <- site %>% left_join(endvert, by= c("seg"= "seg0")) %>% nest(-seg) %>% select(data); df<-df[2, ][[1]][[1]]; df
@@ -31,7 +34,9 @@ reorderbyseg <- function(site_sf, arc_sf.set){
       return(df)
     }
   }
-
+  cat("\n check point 3")
+  cat(site_sf)
+  cat("\n")
   site <- site_sf %>%
     st_drop_geometry() %>%
     as_tibble() %>%
@@ -41,6 +46,9 @@ reorderbyseg <- function(site_sf, arc_sf.set){
     unnest() %>%
     select(seg, vert) %>%
     distinct()
+  cat("\n check point 4")
+  cat(site_sf)
+  cat("\n")
   # note: site is arrange from the upstream to downstream with in group of seg
   return(site)
 }
