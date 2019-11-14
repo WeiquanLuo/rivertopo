@@ -5,6 +5,7 @@
 # reorder group by seg in closet order
 reorderbyseg <- function(site_sf, arc_sf.set){
   # find the *endvert of each seg* where sites locate
+  s <- site_sf$seg
   endvert <- arc_sf.set %>%
     st_drop_geometry() %>%
     as_tibble() %>%
@@ -12,7 +13,7 @@ reorderbyseg <- function(site_sf, arc_sf.set){
     select(seg0, vert0) %>% # select endvert of seg or the from (downstream of the seg)
     arrange(seg0) %>%
     distinct() %>%
-    filter(seg0 %in% site_sf$seg); endvert # filter only seg where sites locate
+    filter(seg0 %in% s)# filter only seg where sites locate
 
   # testing
   # df <- site %>% left_join(endvert, by= c("seg"= "seg0")) %>% nest(-seg) %>% select(data); df<-df[2, ][[1]][[1]]; df

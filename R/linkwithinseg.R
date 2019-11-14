@@ -4,6 +4,7 @@
 #' @importFrom rlang flatten
 #' @importFrom stats setNames
 #' @importFrom tidyr unnest
+#' @importFrom purrr map
 #' @export
 
 #'
@@ -20,7 +21,7 @@ linkwithinseg <- function(site, segvert.set= NULL){
     }
     segvert.set <- site %>%
       nest(vert) %>%
-      mutate(data = purrr::map(data, linkinseg_site2site)) %>% # connect site to downstream site
+      mutate(data = map(data, linkinseg_site2site)) %>% # connect site to downstream site
       unnest() %>%
       mutate(seg1 =seg) %>%
       select(seg, vert, seg1, vert1) %>%
@@ -43,10 +44,10 @@ linkwithinseg <- function(site, segvert.set= NULL){
                                     arc_sf.set = arc_sf.set) %>%
                          setNames(c("seg1","vert1")) %>%
                          nest(vert1) %>%
-                         mutate(data = purrr::map(data, linkinseg_vert2site)) %>% # connect vert to downstream site by selecting the first site
+                         mutate(data = map(data, linkinseg_vert2site)) %>% # connect vert to downstream site by selecting the first site
                          unnest() %>%
                          mutate(vert1 = data) %>%
-                         dplyr::select(-data),
+                         select(-data),
                        by=c("seg0" ="seg1")) %>% # make line if seg is same
       mutate(seg1 = seg0) %>%
       select(seg, vert, seg1, vert1) %>%
