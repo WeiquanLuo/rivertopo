@@ -1,6 +1,7 @@
 #' @importFrom magrittr %>%
 #' @importFrom dplyr filter
 #' @importFrom utils txtProgressBar setTxtProgressBar
+#' @importFrom rivertopo reorderbyseg linkwithinseg linkbetweenseg
 #' @export
 # site to segvert.set
 site2segvert <- function(site_sf, arc_sf.set){
