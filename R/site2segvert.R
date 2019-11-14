@@ -17,9 +17,12 @@ site2segvert <- function(site_sf, arc_sf.set){
   total <- nrow(segvert.set)-1
   pb <- txtProgressBar(min = 0, max = total, style = 3)
   while (segvert.set %>% filter(connected==FALSE) %>% nrow() > 1){
-    segvert.set <- segvert.set %>% linkwithinseg(site = site) %>% # return segvert.set with startVert to avaliable site
+    segvert.set <- segvert.set %>% linkwithinseg(site = site, site_sf = site_sf) %>% # return segvert.set with startVert to avaliable site
       linkbetweenseg(arc_sf.set = arc_sf.set) # return segvert.set with avaliable site to startVert
-    setTxtProgressBar(pb, nrow(segvert.set)- segvert.set %>% filter(connected==FALSE) %>% nrow())
+    setTxtProgressBar(pb,
+                      nrow(segvert.set) - segvert.set %>%
+                        filter(connected==FALSE) %>%
+                        nrow())
   }
   close(pb)
 
