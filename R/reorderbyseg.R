@@ -6,6 +6,8 @@
 # reorder group by seg in closet order
 reorderbyseg <- function(site_sf, arc_sf.set){
   s <- site_sf$seg
+  cat("cat reorderbyseg")
+  print("print reorderbyseg")
   # find the *endvert of each seg* where sites locate
   endvert <- arc_sf.set %>%
     st_drop_geometry() %>%

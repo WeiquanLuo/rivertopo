@@ -7,6 +7,8 @@
 site2segvert <- function(site_sf, arc_sf.set){
 
   # piping the above functions
+  cat("cat site2segvert")
+  print("print site2segvert")
   # 1. reorder site grouped by seg in order of
   site <- reorderbyseg(site_sf = site_sf, arc_sf.set = arc_sf.set)
   # 2. connect to the next downstream site
