@@ -11,13 +11,6 @@
 # find the downstream seg
 simplifybyselectsite <- function(site_sf, arc_sf.set, mouthID){
 
-  # site to segvert.set
-  source("site2segvert.R")
-  # segvert.set to vector.set
-  source("segvert2vector.R")
-  # vector.set to sf.set
-  source("vector2sf.R")
-
   # piping the function above
   ## 1. convert site to segvert.set: seg, vert, seg1, vert1.
   segvert.set <- site_sf %>%

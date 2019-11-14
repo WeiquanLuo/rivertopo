@@ -5,13 +5,6 @@
 # site to segvert.set
 site2segvert <- function(site_sf, arc_sf.set){
 
-  # reorder group by seg in closet order
-  source("reorderbyseg.R")
-  # link within seg: site to site $ vert to site
-  source("linkwithinseg.R")
-  # link between seg
-  source("linkbetweenseg.R")
-
   # piping the above functions
   # 1. reorder site grouped by seg in order of
   # 2. connect to the next downstream site
