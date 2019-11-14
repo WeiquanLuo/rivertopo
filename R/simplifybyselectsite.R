@@ -13,8 +13,8 @@ simplifybyselectsite <- function(site_sf, arc_sf.set, mouthID){
 
   # piping the function above
   ## 1. convert site to segvert.set: seg, vert, seg1, vert1.
-  segvert.set <- site_sf %>%
-    site2segvert(arc_sf.set = arc_sf.set); segvert.set
+  segvert.set <- site2segvert(site_sf = site_sf,
+                              arc_sf.set = arc_sf.set); segvert.set
   ## 2. convert segvert.set to vector.set: from, seg0, vert0, x0, y0, to, seg1, vert1, x1, y1.
   vector.set <- segvert2vector(segvert.set,
                                site_sf= site_select_sf) %>%
