@@ -1,8 +1,10 @@
+#' convert vector.set to sf.set
 #' @importFrom magrittr %>%
 #' @importFrom dplyr select
 #' @importFrom purrr pmap map
 #' @importFrom sf st_sf st_linestring
 #' @export
+#' @param vector.set a dataframe have
 
 # vector.set to sf.set
 vector2sf <- function(vector.set, crs){

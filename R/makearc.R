@@ -1,3 +1,4 @@
+#' Make arc pair from riverVert, rivers_net
 #' @importFrom magrittr %>%
 #' @importFrom plyr laply mdply
 #' @importFrom riverdist riverdistance detectroute
@@ -5,6 +6,11 @@
 #' @importFrom stats na.omit
 #' @importFrom dplyr filter select arrange mutate_all left_join pull tibble
 #' @export
+#' @param riverVert a sf class object contain columns: id seg vert, X, Y, geometry
+#' @param rivers_net a riverdist::rivernetwork class object after clean up by riverdist::clearnup()
+#' @param prefix add text before all site id (defaul is "")
+
+# arc.set <- makearc(riverVert = riverVert, rivers_net = rivers_net_fixed)
 
 # test for makearc
 # riverVert <- riverVert

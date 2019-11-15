@@ -1,6 +1,9 @@
+#' convert arc.set to sf
 #' @importFrom magrittr %>%
 #' @importFrom raster crs
 #' @export
+#' @param arc.set the arcPair object from makearc contain two columns: from, to
+#' @param riverVert a sf class object contain columns: id seg vert, X, Y, geometry
 
 # TEST: riverVert <- riverVert
 # convert arc.set to sf

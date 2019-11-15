@@ -1,9 +1,16 @@
+#' convert rivers_net to site_sf
 #' @importFrom magrittr %>%
 #' @importFrom dplyr filter select
 #' @importFrom purrr pmap map map_dfr
 #' @importFrom sf st_sf st_linestring
 #' @importFrom utils head tail
 #' @export
+#' @param rivers_net a rivernetwork class object from riverdist package.
+#' @param crs a coordinate reference system for Map projections attempt to portray
+#' the surface of the earth or a portion of the earth on a flat piece of paper or
+#' computer screen.
+
+#riverVert <- rivernetwork2riverVert(rivers_net= rivers_net_fixed, crs = 2163)
 
 # convert rivers_net to site_sf
 rivernetwork2riverVert <- function(rivers_net, crs = 2163){
