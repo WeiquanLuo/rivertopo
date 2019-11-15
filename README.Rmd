@@ -52,9 +52,19 @@ devtools::install_github("WeiquanLuo/rivertopo")
 # install.packages("rivertopo") # not yet avaliable
 ```
 
+
+## Workflow
+
+<center>
+![Workflow for rivertopo](inst/extdata/Workflow_ rivertopo.png){width=100%}
+</center>
+
 ## Example
 
 <center>
 ![Topology (green color) of Selected USGS Water Sampling Site along Topology (blue color) of River Topology within the Boundary of Hydrological Unit 07 and 10](inst/extdata/riverNet.png){width=100%}
 </center>
+
+
+
 
