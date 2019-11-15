@@ -58,6 +58,14 @@ devtools::install_github("WeiquanLuo/rivertopo")
 # install.packages("rivertopo") # not yet avaliable
 ```
 
+## Workflow
+
+<center>
+
+![Workflow for rivertopo](inst/extdata/Workflow%20rivertopo.png)
+
+</center>
+
 ## Example
 
 <center>
