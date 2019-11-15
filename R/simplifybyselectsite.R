@@ -1,7 +1,12 @@
+#' Simplify the river topo (arc.set) with sites along the river
 #' @importFrom magrittr %>%
 #' @importFrom dplyr filter
 #' @importFrom raster crs
 #' @export
+#' @param site_sf a site sf object with column: id, lon, lat, geometry, X, Y, and the snapped point information from the riverdist::xy2segvert() columns: seg, vert, snapdist
+#' @param arc_sf.set a arc sf object from makearc() containing columns:
+#' from, seg0, vert0, x0, y0, to, seg1, vert1, x1, y1, geometry
+#' @param mouthID a string of the site id as the mouth point appear in site_sf
 
 # test for module
 # arc_sf.set <- arc_sf.set

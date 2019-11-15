@@ -1,13 +1,17 @@
+#' Convert site to the form of segment and vertice present in the river topological structure
 #' @importFrom magrittr %>%
 #' @importFrom dplyr filter
 #' @importFrom utils txtProgressBar setTxtProgressBar
 #' @export
+#' @param site_sf a site sf object with column: id, lon, lat, geometry, X, Y, and the snapped point information from the riverdist::xy2segvert() columns: seg, vert, snapdist
+#' @param arc_sf.set a arc sf object from makearc() containing columns:
+#' from, seg0, vert0, x0, y0, to, seg1, vert1, x1, y1, geometry
 
 # site to segvert.set
 site2segvert <- function(site_sf, arc_sf.set){
 
   # piping the above functions
-  # 1. reorder site grouped by seg in order of
+  # 1. reorder site with grouping by seg in closet order from endvert of each seg
   site <- reorderbyseg(site_sf = site_sf, arc_sf.set = arc_sf.set)
   # 2. connect to the next downstream site
   segvert.set <- site %>%

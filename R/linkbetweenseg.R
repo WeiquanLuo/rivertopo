@@ -1,7 +1,12 @@
+#' connect to the next downstream site across segment
 #' @importFrom magrittr %>%
 #' @importFrom sf st_drop_geometry
 #' @importFrom dplyr filter select mutate as_tibble rename left_join
 #' @export
+#' @param arc_sf.set a arc sf object from makearc() containing columns:
+#' from, seg0, vert0, x0, y0, to, seg1, vert1, x1, y1, geometry
+#' @param segvert.set a segvert.set compute by site2segvert() containing column: seg, vert, seg1, vert1, onnected.
+#' Variable seg and vert is the snaped point from site to tth river, whereas column seg1, vert1 are the downstream snaped point
 
 
 # link between seg

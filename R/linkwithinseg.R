@@ -1,3 +1,4 @@
+#' connect to the next downstream site within segment
 #' @importFrom magrittr %>%
 #' @importFrom tidyr nest
 #' @importFrom dplyr select filter mutate distinct left_join
@@ -6,8 +7,11 @@
 #' @importFrom tidyr unnest
 #' @importFrom purrr map
 #' @export
+#' @param site_sf a site sf object with column: id, lon, lat, geometry, X, Y, and the snapped point information from the riverdist::xy2segvert() columns: seg, vert, snapdist
+#' @param segvert.set Null in the first run to identify any withinsegment downstream point. when not NULL, a segvert.set is a dataframe calculate by linkbetweenseg() contains column: seg, vert, seg1, vert1, onnected.
+#' Variable seg and vert is the snaped point from site to tth river, whereas column seg1, vert1 are the downstream snaped point
+#' @param site NULL in the non-first run. In the first run, site is the datafram contain two columns: seg, vert resulted from reorderbyseg()
 
-#'
 # link within seg: site to site $ vert to site
 linkwithinseg <- function(site, site_sf, segvert.set= NULL){
 

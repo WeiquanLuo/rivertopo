@@ -1,9 +1,13 @@
+#' reorder site with grouping by seg in closet order from endvert of each seg
 #' @importFrom magrittr %>%
 #' @importFrom dplyr filter select arrange distinct mutate desc
 #' @importFrom purrr map
 #' @export
+#' @param site_sf a site sf object with column: id, lon, lat, geometry, X, Y, and the snapped point information from the riverdist::xy2segvert() columns: seg, vert, snapdist
+#' @param arc_sf.set a arc sf object from makearc() containing columns:
+#' from, seg0, vert0, x0, y0, to, seg1, vert1, x1, y1, geometry
 
-# reorder group by seg in closet order
+# reorder site with grouping by seg in closet order from endvert of each seg
 reorderbyseg <- function(site_sf, arc_sf.set){
 
   # find the *endvert of each seg* where sites locate

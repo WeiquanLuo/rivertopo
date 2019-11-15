@@ -1,8 +1,11 @@
+#' Convert arc.set to vector.set
 #' @importFrom magrittr %>%
 #' @importFrom sf st_drop_geometry
 #' @importFrom dplyr select left_join
 #' @importFrom rlang set_names
 #' @export
+#' @param arc.set the arcPair object from makearc contain two columns: from, to
+#' @param riverVert a sf class object contain columns: id seg vert, X, Y, geometry
 
 arc2vector <- function(arc.set, riverVert){
   lookuptable_locs2lonlat <- st_drop_geometry(riverVert)
