@@ -62,7 +62,7 @@ devtools::install_github("WeiquanLuo/rivertopo")
 
 <center>
 
-![Workflow for rivertopo](inst/extdata/Workflow%20rivertopo.png)
+![Workflow for rivertopo](inst/extdata/Workflow_rivertopo.png)
 
 </center>
 

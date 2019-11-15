@@ -56,7 +56,7 @@ devtools::install_github("WeiquanLuo/rivertopo")
 ## Workflow
 
 <center>
-![Workflow for rivertopo](inst/extdata/Workflow rivertopo.png){width=100%}
+![Workflow for rivertopo](inst/extdata/Workflow_rivertopo.png){width=100%}
 </center>
 
 ## Example
