@@ -12,15 +12,17 @@
 segvert2vector <- function(segvert.set, site_sf){
   vector.set <- site_sf %>%
     st_drop_geometry() %>%
-    select(id, seg, vert, X, Y) %>%
+    select(id, seg, vert, X, Y, lon, lat) %>%
     left_join(segvert.set, by = c("seg", "vert")) %>%
-    rename(seg0=seg, vert0 =vert, from = id, x0 = X, y0 = Y)
+    rename(seg0=seg, vert0 =vert, from = id, x0 = X, y0 = Y,  lon0 = lon, lat0 = lat) %>%
+    select(-connected); vector.set
 
   complete_vector.set <- vector.set %>%
-    left_join(vector.set %>%
-                select(-seg1, -vert1) %>%
-                rename(to=from, seg1=seg0, vert1=vert0, x1=x0, y1=y0),
+    left_join(site_sf %>%
+                st_drop_geometry() %>%
+                select(id, seg, vert, X, Y, lon, lat) %>%
+                rename(to=id, seg1=seg, vert1=vert, x1=X, y1=Y, lon1 = lon, lat1 = lat),
               by = c("seg1", "vert1")) %>%
-    select(from, seg0, vert0, x0, y0, to, seg1, vert1, x1, y1)
+    select(from, seg0, vert0, x0, y0, lon0, lat0, to, seg1, vert1, x1, y1, lon1, lat1); complete_vector.set
   return(complete_vector.set)
 }
