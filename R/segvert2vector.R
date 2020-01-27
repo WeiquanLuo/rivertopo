@@ -23,6 +23,7 @@ segvert2vector <- function(segvert.set, site_sf){
                 select(id, seg, vert, X, Y, longitude, latitude) %>%
                 rename(to=id, seg1=seg, vert1=vert, x1=X, y1=Y, lon1 = longitude, lat1 = latitude),
               by = c("seg1", "vert1")) %>%
-    select(from, seg0, vert0, x0, y0, lon0, lat0, to, seg1, vert1, x1, y1, lon1, lat1); complete_vector.set
+    select(from, seg0, vert0, x0, y0, lon0, lat0, to, seg1, vert1, x1, y1, lon1, lat1) %>% 
+    distinct; complete_vector.set
   return(complete_vector.set)
 }
